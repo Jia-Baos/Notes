@@ -13,4 +13,4 @@
 1. `python -m venv venv （创建虚拟环境）`
 2. `source venv/Scripts/activate    （激活虚拟环境）`
 3. `deactivate  （关闭虚拟环境，pycharm terminal也采用此种方法关闭虚拟环境）`
-4. 
+4. `ctrl + c    (退出visdom远程服务)`
