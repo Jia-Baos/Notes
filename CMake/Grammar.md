@@ -25,8 +25,8 @@
     add_executable(hello-world hello-world.cpp)
     ```
 
-4. `cmake -G "MinGW Makefiles" ..  （如此可以使用GCC编译器，否则会会自动调用VS中的MSVC编译器）`
-5. `cmake --build . --config Release （可以生成release模式，默认是debug模式）`
+3. `cmake -G "MinGW Makefiles" ..  （如此可以使用GCC编译器，否则会会自动调用VS中的MSVC编译器）`
+4. `cmake --build . --config Release （可以生成release模式，默认是debug模式）`
 
 ### 切换生成器
 
@@ -49,7 +49,7 @@ cmake -G MinGW Makefiles ..
 1. 编写`main.cpp, Message.h, Message.cpp`，三者同级
 2. 编写 `CMakeLists.txt`
    1. 只生成静态链接库
-   
+
         ```Cmake
         cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
         project(main LANGUAGES CXX)
@@ -91,7 +91,7 @@ cmake -G MinGW Makefiles ..
         target_link_libraries(main message-static)
         ```
 
-    3. 同时生成静态链接库和动态链接库且同名
+   3. 同时生成静态链接库和动态链接库且同名
 
         ```Cmake
         cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
@@ -126,3 +126,71 @@ cmake -G MinGW Makefiles ..
 
 1. `cmake -B build  （告诉 CMake 在一个名为 build 的目录中生成所有的文件）`
 2. `cmake --build build --config Release --target install   （分别指定build的目录、Release模式、目标文件）`
+
+### 使用 CMake 进行测试
+
+1. 编写 `test.cpp`
+
+    ```C++
+    #include <vector>
+
+    #include "sum_integers.h"
+
+    int main() {
+        auto integers = {1, 2, 3, 4, 5};
+    if (sum_integers(integers) == 15) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+   ```
+
+2. 编写 `CMakeLists.txt`
+
+    ```Cmake
+    cmake_minimum_required(VERSION 3.20 FATAL_ERROR)
+
+    project(test LANGUAGES CXX)
+
+    set(CMAKE_CXX_STANDARD 17)
+    set(CMAKE_CXX_EXTENSIONS OFF)
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+    add_library(sum_integers_static STATIC "")
+
+    # 实现细粒度控制
+    target_sources(sum_integers_static
+    PRIVATE
+        sum_integers.cpp
+    PUBLIC
+        sum_integers.h
+    )
+
+    # 添加头文件目录
+    target_include_directories(sum_integers_static
+    PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR}    
+    )
+
+    # main code
+    add_executable(sum_up main.cpp)
+    target_link_libraries(sum_up sum_integers_static)
+
+    # testing binary
+    add_executable(cpp_test test.cpp)
+    target_link_libraries(cpp_test sum_integers_static)
+
+    # test
+    enable_testing()
+
+    add_test(
+        NAME cpp_test
+        COMMAND $<TARGET_FILE:cpp_test>
+    )
+    ```
+
+3. `cmake -B build -G "MinGW Makefiles"`
+4. `cmake --build build --config Release`
+5. `cd build`
+6. `ctest   （用来进行测试）`

@@ -33,7 +33,6 @@
     7. `ctrl + w    （删除光标左侧的单词）`
     8. `alt + d （删除光标右侧的单词）`
 
-
 ## 将代码上传到master分支（github中使用master作为主分支）
 
 1. `git init    //工作空间创建.git文件夹（默认隐藏了该文件夹）`
@@ -54,6 +53,7 @@
 7. `git branch -m master main   （将本地分支改名字）`
 
 ## 工程多人开发
+
 1. `git remote add origin git@github.com:Jia-Baos/Yolov1.git`
 2. `git pull origin master（对于自己的库）`
 3. `git clone git@github.com:Jia-Baos/Yolov1.git（对于别人的库）`
@@ -71,7 +71,6 @@
 2. `git branch  （查看本地所有分支）`
 3. `git branch -r   （查看远程所有分支）`
 
-
 ## 多人协作加分支
 
 1. `git checkout master （切换到基础分支）`
@@ -83,4 +82,3 @@
 4. `git branch -a   （查看所有分支）`
 5. `git brach   （查看当前使用分支，结果列表前面有*号，代表当前使用的分支）`
 6. `git checkout <newbrach_name>     （切换分支）`
-

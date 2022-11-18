@@ -70,7 +70,7 @@ This text is ***really important***.
 > - Revenue was off the chart.
 > - Profits were higher than ever.
 >
->  *Everything* is going according to **plan**.
+> *Everything* is going according to **plan**.
 
 ## 列表语法
 
@@ -95,20 +95,18 @@ This text is ***really important***.
 - First item
 - Second item
 - Third item
-    - Indented item
-    - Indented item
+  - Indented item
+  - Indented item
 - Fourth item
 
 ### 在列表中嵌套其他元素
 
 要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符。
 
-*   This is the first list item.
-*   Here's the second list item.
-  
+- This is the first list item.
+- Here's the second list item.
     I need to add another paragraph below the second list item.
-
-*   And here's the third list item.
+- And here's the third list item.
 
 ## 代码语法
 
