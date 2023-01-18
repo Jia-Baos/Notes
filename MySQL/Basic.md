@@ -111,7 +111,7 @@ CREATE TABLE student (student_name VARCHAR(255) NOT NULL,student_id INT NOT NULL
 
 1. 删除部分数据
 
-    即删除指定的部分数据，需要使用WHERE子句来指定删除记录的条件。
+    即删除指定的部分数据，需要使用 WHERE 子句来指定删除记录的条件。
 
     ```MYSQL
     DELETE FROM 数据表名 WHERE 字段名1=值1;
@@ -130,7 +130,7 @@ CREATE TABLE student (student_name VARCHAR(255) NOT NULL,student_id INT NOT NULL
     ```
 
     注意：
-    1. DELETE 后面可以跟WHERE子句指定删除部分记录，TRUNCATE 只能删除整个表的所有记录；
+    1. DELETE 后面可以跟 WHERE 子句指定删除部分记录，TRUNCATE 只能删除整个表的所有记录；
     2. 使用 TRUNCAT E语句删除记录后，新添加的记录时，自动增长字段（如本文中 student 表中的 id 字段）会默认从 1 开始，而使用 DELETE 删除记录后，新添加记录时，自动增长字段会从删除时该字段的的最大值加 1 开始计算（即原来的 id 最大为 5，则会从 6 开始计算）。所以如果是想彻底删除一个表的记录而且不会影响到重新添加记录，最好使用 TRUNCATE 来删除整个表的记录。
 
 ## 改
@@ -140,7 +140,7 @@ CREATE TABLE student (student_name VARCHAR(255) NOT NULL,student_id INT NOT NULL
     指更新指定表中的指定记录，使用 WHERE 子句来指定。
 
     ```MYSQL
-    UODATE 数据表名 SET 字段名1=值1,字段名2=值2 WHERE 字段名3=值3;
+    UPDATE 数据表名 SET 字段名1=值1,字段名2=值2 WHERE 字段名3=值3;
     ```
 
 2. 更新全部数据
@@ -148,7 +148,7 @@ CREATE TABLE student (student_name VARCHAR(255) NOT NULL,student_id INT NOT NULL
     在 UPDATE 语句中若不使用 WHERE 子句，则会将表中所有记录的指定字段都进行更新。
 
     ```MYSQL
-    UODATE 数据表名 SET 字段名1=值1,字段名2=值2 WHERE 字段名3=值3;
+    UPDATE 数据表名 SET 字段名1=值1,字段名2=值2 WHERE 字段名3=值3;
     ```
 
 ## 查
