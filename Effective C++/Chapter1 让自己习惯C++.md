@@ -55,7 +55,7 @@ const double AspectRatio = 1.653;   // 因为全大写一般用于宏，这里�
 
 ### 2. const 的注意事项
 
-1. 当这个常量是一个指针类型的时候，需要将指针本身也定义为 const，这就是为什么有时会出现一次声明有两个 const 的情况，他们指代的目标是不一样的，一个是指针本身，一个是指向的对象，例如:
+1. 当这个常量是一个指针类型的时候，需要将指针本身也定义为 const，这就是为什么有时会出现一次声明有两个 const 的情况，它们指代的目标是不一样的，一个是指针本身，一个是指向的对象，例如:
 
     ```C++
     const char* const authorName = "Scott Meyers";
@@ -71,7 +71,7 @@ const double AspectRatio = 1.653;   // 因为全大写一般用于宏，这里�
     }
     ```
 
-    需要注意的是，一般我们把声明写在头文件供其他文件使用，把实现写在实现文件中，而对于类的 static 成员，如果它是整型类型（包括int，char，bool等），可以在实现文件中不经过定义式直接使用（前提是不去取他们的地址）。但是如果是要取地址的情况或者编译器坚持需要一个定义式（尽管这是不正确的），那么必须在使用它之前先在实现文件中再提供一遍定义式，比如：
+    需要注意的是，一般我们把声明写在头文件供其他文件使用，把实现写在实现文件中，而对于类的 static 成员，如果它是整型类型（包括 int，char，bool 等），可以在实现文件中不经过定义式直接使用（前提是不去取它们的地址）。但是如果是要取地址的情况或者编译器坚持需要一个定义式（尽管这是不正确的），那么必须在使用它之前先在实现文件中再提供一遍定义式，比如：
 
     ```C++
     const int GamePlayer::NumTurns; // 不需要设定初值，因为这只是一个定义式，值已经在声明的时候赋予了
@@ -92,7 +92,7 @@ private:
 }
 // 实现文件
 ...
-const int CostEstimate::FudgeFactor = 1.36;
+const double CostEstimate::FudgeFactor = 1.36;
 ```
 
 但是这只能在编译器用不着该成员对象的值的时候才能生效，例如 2. const 的注意事项上面的 GamePlayer 类，这个类的 scores 成员对象需要使用 NumTurns 来确定数组的大小。这个时候为了应对这种编译器（尽管它是错误的），需要使用叫做 the enum hack 的小技巧：
@@ -118,13 +118,13 @@ private:
 #define CALL_WITH_MAX(a,b) f((a)>(b)?(a):(b))
 ```
 
-上面这个宏会选择a和b当中的最大值作为f函数的入参并返回结果。
+上面这个宏会选择 a 和 b 当中的最大值作为f函数的入参并返回结果。
 
 尽管上面的每个变量都加上了括号，但是这个宏仍然无法避免一些问题。
 
 ```C++
-int a=0;
-int b=5;
+int a = 0;
+int b = 5;
 CALL_WITH_MAX(++a, b);          // a 自增了两次
 CALL_WITH_MAX(++a, b +1 0);     // a 自增了一次
 ```
@@ -269,7 +269,7 @@ const 参数可以限制函数的参数在中途进行变化，在不需要改�
     class CTextBlock{
         private:
         char* pText;
-        bool lengthIsValid；
+        bool lengthIsValid;
         std::size_t textLength;
         public :
         std::size_t CTextBlock::Length() const
