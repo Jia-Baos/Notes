@@ -38,4 +38,3 @@ std::unique_lock<std::mutex> lock(mtx); //相较 lock_guard 更加灵活，可�
 std::atomic<int> globalVariable = 1;    // 不再需要上锁、解锁操作
 ```
 
-## 条件变量
