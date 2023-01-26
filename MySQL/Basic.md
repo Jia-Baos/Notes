@@ -148,7 +148,7 @@ CREATE TABLE student (student_name VARCHAR(255) NOT NULL,student_id INT NOT NULL
     在 UPDATE 语句中若不使用 WHERE 子句，则会将表中所有记录的指定字段都进行更新。
 
     ```MYSQL
-    UPDATE 数据表名 SET 字段名1=值1,字段名2=值2 WHERE 字段名3=值3;
+    UPDATE 数据表名 SET 字段名1=值1,字段名2=值2;
     ```
 
 ## 查
