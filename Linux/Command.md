@@ -1,0 +1,26 @@
+# Linux常用指令
+
+- `cd <folder> （进入文件夹）`
+- `cd ..   （回到上一级目录）`
+- `pwd （打印工作路径，它会显示当前所在的目录路径）`
+- `ls  （列出当前目录中的所有文件）`
+- `ll  （列出的内容更为详细）`
+- `rm <file>   （删除一个文件）`
+- `rm -r <folder>  （删除一个空文件夹）`
+- `rm -rf <folder>  （删除一个包含内容的文件夹）`
+- `mkdir <folder>  （新建一个文件夹）`
+- `touch <file>    （新建一个文件）`
+- `chmod -r(-w,-x) <file>   （更改文件的模式，例如bash执行时提示无权限）`
+- `wc <file>    （字数统计）`
+- `cat <file>   （直接从终端预览文件）`
+- `head -n 4 <file>  （预览文件前4行）`
+- `tail -n 4 <file>  （预览文件后4行）`
+- `grep "name" <file>   （搜索与正则表达式匹配的行并打印）`
+- `find <folder> -name <file>   （在folder中搜索名为file的文件）`
+- `kill <PID、ID>   （终止指定进程）`
+- `mv <file> <folder>   （移动文件到指定文件夹）`
+- `cp <file> <folder>   （拷贝文件到指定文件夹）`
+- `reset  （清空git bash当前窗口内容）`
+- `exit   （退出git bash窗口）`
+- `tar -czvf test.tar.gz <file> （压缩文件）`
+- `tar -xzvf test.tar.gz    （解压文件）`
