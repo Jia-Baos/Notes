@@ -86,3 +86,10 @@ data. All data can be downloaded from [Link](http://sintel.is.tue.mpg.de).
     | 12 | width\*height\*2\*4 | Data: float values for u and v, interleaved, in row order, i.e., u[row0,col0], v[row0,col0], u[row0,col1], v[row0,col1], ... |
 
     Example code (C and MATLAB) to read/write .flo files is included in the subdirectory flow_code/. The C code was written by Daniel Scharstein, the MATLAB code was written by Deqing Sun.
+
+## DATA METRICS
+
+===========
+
+1. d10: <=10 pixels from an occulusion boundary
+2. s10: speed <= 10ppf
