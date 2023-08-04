@@ -24,3 +24,4 @@
 - `exit   （退出git bash窗口）`
 - `tar -czvf test.tar.gz <file> （压缩文件）`
 - `tar -xzvf test.tar.gz    （解压文件）`
+- `du -h --max-depth=1 /home/data   （查看当前文件夹下文件夹的大小）`
