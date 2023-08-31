@@ -59,7 +59,7 @@
 ## 多人协作加分支
 
 1. `git checkout master （切换到基础分支）`
-2. `git checkout -b newBranch   （创建并切换到新分支）
+2. `git checkout -b newBranch   （创建并切换到新分支）`
 3. `更新分支代码并提交`
     1. `git add.`
     2. `git commit -m "init new Branch"`
@@ -67,3 +67,11 @@
 4. `git branch -a   （查看所有分支）`
 5. `git brach   （查看当前使用分支，结果列表前面有*号，代表当前使用的分支）`
 6. `git checkout <newbrach_name>     （切换分支）`
+
+## Git撤销、回退
+
+1. `git reset --soft HEAD~1 （撤销最近一次的commit(撤销commit，不撤销git add)）`
+
+2. `git reset --mixed HEAD~1    （撤销最近一次的commit(撤销commit，撤销git add)）`
+
+3. `git reset --hard HEAD~1 （撤销最近一次的commit(撤销commit，撤销git add，工作区的代码改动将丢失。操作完成后回到上一次commit状态)）`
