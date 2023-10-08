@@ -53,8 +53,10 @@
 ## log模式的退出
 
 1. `git log （查看最近日志），退出：q`
-2. `git branch  （查看本地所有分支）`
-3. `git branch -r   （查看远程所有分支）`
+2. `git branch （查看本地所有分支）`
+3. `git branch -r （查看远程所有分支）`
+4. `git branch -d branch_name （删除本地分支）`
+5. `git push origin --delete branch_name （删除远程分支）`
 
 ## 多人协作加分支
 
@@ -67,6 +69,7 @@
 4. `git branch -a   （查看所有分支）`
 5. `git brach   （查看当前使用分支，结果列表前面有*号，代表当前使用的分支）`
 6. `git checkout <newbrach_name>     （切换分支）`
+7. `git merge branch_name （将分支合并到主分支，本地文件）`
 
 ## Git撤销、回退
 
