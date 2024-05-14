@@ -13,6 +13,7 @@
 11. `conda info --envs  （查看已有的虚拟环境）`
 12. `conda create --prefix=D:/Conda/envs/envs_name python=3.8   （将虚拟环境安装到指定路径，默认路径为C盘）`
 13. `conda update -n base -c defaults conda conda更新`
+14. `conda install --file requirement.txt   (使用conda命令安装包)`
 
 ## jupyter notebook的使用
 
