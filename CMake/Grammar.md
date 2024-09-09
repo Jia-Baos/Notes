@@ -41,7 +41,7 @@ cmake --help
 具体实施
 
 ```Cmake
-cmake -G MinGW Makefiles ..
+cmake -G "MinGW Makefiles" ..
 ```
 
 ### 构建和链接静态库和动态库
@@ -170,7 +170,7 @@ cmake -G MinGW Makefiles ..
     # 添加头文件目录
     target_include_directories(sum_integers_static
     PUBLIC
-        ${CMAKE_CURRENT_LIST_DIR}    
+        ${CMAKE_CURRENT_LIST_DIR}
     )
 
     # main code
